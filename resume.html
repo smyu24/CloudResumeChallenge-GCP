@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--ICONS-->
+    <script src="https://kit.fontawesome.com/1b41f6b89b.js" crossorigin="anonymous"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="static/css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--JS-->
+    <script src="static/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1 id="name">Seung-min (Eric) Yu</h1>
+            <div id="designation">
+                <span class="title"><a href="tel:5032786793">503-278-6793</a> | <a href="https://www.linkedin.com/in/seung-min-yu-eric/">linkedin.com/in/seung-min-yu-82761121b</a> | <a href="https://github.com/smyu24">github.com/smyu24</a></span>
+            </div>
+            <div class="contact">
+                <div class="email"><a href="mailto:smyu24@gmail.com">smyu24@gmail.com</a> </div>
+            </div>
+        </header>
+
+        <button id="resumeButton" onclick="fetchContent()">View Resume</button>
+
+        <!-- display loaded content -->
+        <div id="resumeContent" style="display: none;">
+            <section class="about">
+                <h2>About Me</h2>
+                <p>I am an ambitious and dedicated individual currently pursuing a dual major in Computer Science and
+                    Data Science at the University of Wisconsin-Madison. With a passion for technology and a fascination
+                    for data-driven insights, I am eager to contribute my skills and expertise to the ever-evolving
+                    field of computer and data science. With my dual major in CS and DS, I hope to hone my data analysis
+                    and application skills to create new technology and improve the lives of others.<br>
+                </p>
+            </section>
+
+            <section class="education">
+                <h2>Education</h2>
+                <h3>&ensp;University of Wisconsin-Madison (05/2026)</h3>
+                <p>&ensp;&ensp;Bachelor of Science in <i>Computer Science</i></p>
+            </section>
+            <section class="experience">
+                <h2>Experience</h2>
+
+                <!-- html entitites -->
+                <h3>&ensp;Software Engineer Intern @ MMT Prep (May. 2021 - Oct. 2023)</h3>
+                <ul>
+                    <li>Created a full-stack web application that used Python, Streamlit, SQLite (migrated to
+                        MySQL), Material-UI, and Docker to allow questions to be categorized and used as data
+                        for labeling.</li>
+                    <li>Spent 450+ hours working with 30+ K-8 students to find common issues with learning and
+                        applied this knowledge to create a full-stack React web application that innovated
+                        strategies for promoting academic interest.</li>
+                    <li>Contributed to publishing (ISBN-13: 979-8218956615) by developing quiz application and
+                        being the AI engineer for the question generation model.</li>
+                </ul>
+
+                <h3>&ensp;Software Tech Lead @ FRC Robotics Competition Club (2020 - 2022)</h3>
+                <ul>
+                    <li>Organized and managed GitHub repository for team robot code. Drafted and finalized
+                        timelines for necessary code while coordinating with other programmers to program
+                        functions/subfunctions of team robot. FRC Judges Award awarded to team efforts in 2022.
+                    </li>
+                    <li>Created robot vision filters in C using bitmaps to help with vision processing.
+                        Integrated common image filtering techniques such as spatial filters, linear filters,
+                        de-blurring, and more.</li>
+                </ul>
+                <h3>&ensp;Congressional App Challenge Ambassador (2022 - 2023)</h3>
+            </section>
+
+            <section class="experience">
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+                    <h3>&ensp;AGS Math Worksheet | June 2020 – Present</h3>
+                    <ul>
+                        <li>Developed a full-stack app and built a computer algebra system due to math scarcity in
+                            school district. 70+ regular users. Auto-generated higher-level math problems/solutions,
+                            graphics, & word problems. Used in 2 high schools and 2 tutoring centers.</li>
+                        <li>Made dynamic generation of LaTeX formatted PDF worksheets containing Common Core
+                            Standardized auto-generated questions & answers; client-side rendered PDFs.</li>
+                        <li>Optimized how data through JSON was handled during LaTeX compilation/rendering, causing an
+                            8-second LaTeX compilation optimization for an average of 100 problems & worksheet; current
+                            compilation and render time is an average of 3 seconds for worksheet of 100 problems &
+                            answer.</li>
+                        <li>Researched math theorems ranging from linear algebra to calculus and collaborated with math
+                            department to curate custom algorithms; packages used to accomplish this feat include:
+                            Sympy, Numpy, Scipy, Pandas</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>&ensp;County Analysis | Sep. 2022 - Present</h3>
+                    <ul>
+                        <li>Started a data science project using statistical analysis of aggregated datasets (social
+                            indicators, Free Market Rents, & real estate trends) to generate preference-based
+                            residential real estate recommendations and county analysis.</li>
+                        <li>Utilized advanced geospatial analysis using location parameters to allow users to customize
+                            their recommendation feed of properties.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>&ensp;ScribblScan | Sept. 2023 - Oct. 2023</h3>
+                    <ul>
+                        <li>Custom fine-tuned Microsoft’s TrOCR vision encoder & decoder model using the IAM Handwriting
+                            Dataset; Model achieved accuracy of 94.82%, training loss of 0.23, validation loss of 0.8, &
+                            character error rate of 8.6</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div id="loadedResumeContent"></div>
+
+</body>
+
+</html>
