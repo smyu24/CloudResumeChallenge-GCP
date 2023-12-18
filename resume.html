@@ -16,30 +16,45 @@
 
     <!--JS-->
     <script src="static/css/main.js"></script>
-    <script src="static/css/visitorCounter.js"></script>
+    <!-- <script src="static/css/visitorCounter.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
 </head>
 
 
 <body>
     <div class="container">
-
-        <!-- JS visitor counter display integrated with firestore -->
-        <div>Visitor Count: <span id="visitorCount">Loading...</span></div>
+        <!-- JS visitor counter display integrated with cloud function + firestore db -->
+        <script>
+            $(document).ready(function () {
+                $.get("https://us-central1-cloudresumechallenge-406720.cloudfunctions.net/visitorCounterFunction", function (data, status) {
+                    document.getElementById("visitorCount").innerHTML = "VisitorCounter: " + data['visitorNumber'];
+                }).fail(function () {
+                    console.log("Error in counter!");
+                    document.getElementById("visitorCount").innerHTML = "Error in counter!";
+                });
+            });
+        </script>
+        <div>
+            <div id="visitorCount"></div>
+        </div>
 
         <header class="header">
             <h1 id="name">Seung-min (Eric) Yu</h1>
             <div id="designation">
-                <span class="title"><a href="tel:5032786793">503-278-6793</a> | <a href="https://www.linkedin.com/in/seung-min-yu-eric/">linkedin.com/in/seung-min-yu-82761121b</a> | <a href="https://github.com/smyu24">github.com/smyu24</a></span>
+                <span class="title"><a href="tel:5032786793">503-278-6793</a> | <a
+                        href="https://www.linkedin.com/in/seung-min-yu-eric/">linkedin.com/in/seung-min-yu-82761121b</a>
+                    | <a href="https://github.com/smyu24">github.com/smyu24</a></span>
             </div>
             <div class="contact">
                 <div class="email"><a href="mailto:smyu24@gmail.com">smyu24@gmail.com</a> </div>
             </div>
         </header>
+
 
         <button id="resumeButton" onclick="fetchContent()">View Resume</button>
 
